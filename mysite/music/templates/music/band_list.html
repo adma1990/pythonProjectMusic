@@ -2,6 +2,12 @@
 
 {% block content%}
 
-    {{ band_list.name_band }}
+    {% for l in list %}
+    <a href="{% url 'band_main' id=l.id %}">
+        {{ l.name_band }}</a>
+    {% endfor %}
+
+    <img src="{{ image.image_band.url }}">
+
 
 {% endblock %}
