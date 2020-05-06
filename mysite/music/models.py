@@ -36,7 +36,8 @@ class Album(models.Model):
         return self.name_album
 
 class Images(models.Model):
-    image = models.ImageField(upload_to='images')
+    image_band = models.ImageField(upload_to='images')
+    image_album = models.ImageField(upload_to='images')
     band = models.ForeignKey(Band, on_delete=models.CASCADE)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
 
