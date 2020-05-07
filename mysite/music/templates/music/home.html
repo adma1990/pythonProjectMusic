@@ -2,12 +2,23 @@
 
 {% block content %}
 
-<div>
+<div class="row mt-3">
+    <div class="col-2">
 
-    {% for l in list %}
-       {{ l.name_band }}
-    {% endfor %}
+          {% for genre in genre_music %}
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="{% url 'band_list' id=genre.id %}">{{ genre.name_genre }}</a>
+                    </li>
+                </ul>
+          {% endfor %}
 
+    </div>
+
+    <div class="col-10">
+        {% for image_home in image_home_page %}
+            <img src="{{ image_home.imageAll.url }}">
+        {% endfor %}
+    </div>
 </div>
-
 {% endblock %}

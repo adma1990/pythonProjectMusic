@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+
+{% block content%}
+
+{% for im in image_album %}
+<img src="{{ im.image_album.url }}">
+
+{% endfor %}
+
+{% endblock %}

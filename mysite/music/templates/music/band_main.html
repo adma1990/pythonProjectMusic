@@ -2,7 +2,15 @@
 
 {% block content%}
 
-<img src="{{ image.image_band.url }}">
+{% for album in albums %}
+    <a href="{% url 'album' id=album.id %}">
+        {{ album.name_album }}
+    </a>
+{% endfor %}
+
+{% for image in image_album %}
+    <img src="{{ image.image_album.url }}">
+{% endfor %}
 
 
 {% endblock %}

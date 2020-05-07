@@ -38,16 +38,22 @@ class Album(models.Model):
     def __str__(self):
         return self.name_album
 
-#модель отвечает за изображения альбомов и фото групп или отдельных участников
-#связана с Band и Album
-class Images(models.Model):
-    image_band = models.ImageField(upload_to='images')
+#модель отвечает за изображения альбомов
+#связана с Album
+class ImagesAlbum(models.Model):
     image_album = models.ImageField(upload_to='images')
-    band = models.ForeignKey(Band, on_delete=models.CASCADE)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
 
     class Meta():
+        verbose_name = "Изображения обложек альбомов"
+
+#модель для всех остальных изображений
+class Images(models.Model):
+    imageAll = models.ImageField(upload_to='images')
+
+    class Meta():
         verbose_name = "Изображения"
+
 
 
 

@@ -2,12 +2,20 @@
 
 {% block content%}
 
-    {% for l in list %}
-    <a href="{% url 'band_main' id=l.id %}">
-        {{ l.name_band }}</a>
-    {% endfor %}
 
-    <img src="{{ image.image_band.url }}">
+        {% for lists in list %}
+             <a href="{% url 'band_main' id=lists.id %}">
+                {{ lists.name_band }}
+             </a>
+        {% endfor %}
+
+        {% for image_albums in image_album %}
+            <img src="{{ image_albums.image_album.url }}">
+
+        {% endfor %}
+
+
+
 
 
 {% endblock %}
